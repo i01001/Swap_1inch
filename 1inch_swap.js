@@ -434,8 +434,10 @@ async function main() {
   //   });
   // });
 
-  let balance = await contract.methods.balanceOf(wallet.address);
-  // console.log(balance);
+  // let balance = await contract.methods.balanceOf(wallet.address);
+  let balance = await contract.methods.decimals();
+
+  console.log(balance);
 
   // await swappingFTMtoDAI(fromTokenAddress, toAddressAddress, tokenAmount);
 }
