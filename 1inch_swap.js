@@ -18,10 +18,19 @@ async function quotes() {
 }
 
 
+async function swappingFTMtoDAI(){
+  try {
+    const swap_FTMtoDAI = await axios.get('');
+    console.log(swap_FTMtoDAI);
+  }catch (swapFTMtoDAIerror){
+    console.log("Error swapping FTM to DAI", swapFTMtoDAIerror);
+  }
+}
 
 
 async function main() {
-    await quotes();
+    // await quotes();
+    await swappingFTMtoDAI;
 }
 
 main();
