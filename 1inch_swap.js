@@ -46,7 +46,7 @@ async function approval(_tokenAddress, _tokenAmount){
 
 async function swappingFTMtoDAI(_fromTokenAddress, _toTokenAddress, _tokenAmount){
 
-  if(_toTokenAddress != '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE'){
+  if(_fromTokenAddress != '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE'){
     await approval(_toTokenAddress, _tokenAmount);
   }
   // try {
