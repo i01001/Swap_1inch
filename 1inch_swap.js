@@ -14,7 +14,7 @@ async function quotes() {
       console.log(quote);
       console.log("before");
       if (quote){
-        name1 = await quote.estimatedGas;
+        name1 = await quote.data.estimatedGas;
         console.log("1", await name1);
       }
     } catch (error) {
