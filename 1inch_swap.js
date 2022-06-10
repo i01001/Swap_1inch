@@ -12,8 +12,8 @@ async function quotes() {
   try {
       const quote = await axios.get('https://api.1inch.io/v4.0/250/quote?fromTokenAddress=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toTokenAddress=0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E&amount=100000000000000000');
       // console.log(quote);
-      if (quote.name){
-        name1 = quote.name;
+      if (quote.fromToken){
+        name1 = quote.fromToken.symbol;
         console.log(name1);
       }
     } catch (error) {
