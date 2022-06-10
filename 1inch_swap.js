@@ -49,21 +49,21 @@ async function swappingFTMtoDAI(_fromTokenAddress, _toTokenAddress, _tokenAmount
   if(_fromTokenAddress != '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE'){
     await approval(_toTokenAddress, _tokenAmount);
   }
-  // try {
-  //   const swap_FTMtoDAI = await axios.get(`https://api.1inch.io/v4.0/250/swap?fromTokenAddress=${_fromTokenAddress}&toTokenAddress=${_toTokenAddress}&amount=${_tokenAmount}&fromAddress=${wallet.address}&slippage=0.1&disableEstimate=true`);
-  //   // console.log(swap_FTMtoDAI);
-  //   if(swap_FTMtoDAI.data){
-  //     swap_data = swap_FTMtoDAI.data;
-  //     swap_data.tx.gas = 1000000;
-  //     // console.log("1", swap_data.tx);
-  //     transaction = await web3.eth.sendTransaction(swap_data.tx);
-  //     if(transaction.status){
-  //       console.log("Swap FTM to DAI successful");
-  //     }
-  //   }
-  // }catch (swapFTMtoDAIerror){
-  //   console.log("Error swapping FTM to DAI", swapFTMtoDAIerror);
-  // }
+  try {
+    const swap_FTMtoDAI = await axios.get(`https://api.1inch.io/v4.0/250/swap?fromTokenAddress=${_fromTokenAddress}&toTokenAddress=${_toTokenAddress}&amount=${_tokenAmount}&fromAddress=${wallet.address}&slippage=0.1&disableEstimate=true`);
+    // console.log(swap_FTMtoDAI);
+    if(swap_FTMtoDAI.data){
+      swap_data = swap_FTMtoDAI.data;
+      swap_data.tx.gas = 1000000;
+      // console.log("1", swap_data.tx);
+      transaction = await web3.eth.sendTransaction(swap_data.tx);
+      if(transaction.status){
+        console.log("Swap FTM to DAI successful");
+      }
+    }
+  }catch (swapFTMtoDAIerror){
+    console.log("Error swapping FTM to DAI", swapFTMtoDAIerror);
+  }
 }
 
 
