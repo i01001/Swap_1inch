@@ -90,16 +90,19 @@ async function main() {
     fromTokenAddress='0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E'
     toAddressAddress='0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE'
     tokenAmount = 100000000000000000; 
-    let contract = new web3.eth.Contract(minABI).at(fromTokenAddress);
+    // let contract = new web3.eth.Contract(minABI).at(fromTokenAddress);
 
-    contract.balanceOf(walletAddress, (error, balance) => {
-      // Get decimals
-      contract.decimals((error, decimals) => {
-        // calculate a balance
-        balance = balance.div(10**decimals);
-        console.log(balance.toString());
-      });
-    });
+    // contract.balanceOf(walletAddress, (error, balance) => {
+    //   // Get decimals
+    //   contract.decimals((error, decimals) => {
+    //     // calculate a balance
+    //     balance = balance.div(10**decimals);
+    //     console.log(balance.toString());
+    //   });
+    // });
+
+    let balance = fromTokenAddress.balanceOf(wallet.address);
+    console.log(balance);
 
     // await swappingFTMtoDAI(fromTokenAddress, toAddressAddress, tokenAmount);
 
