@@ -420,22 +420,8 @@ async function main() {
   toAddressAddress = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
   tokenAmount = 100000000000000000;
   var contract = new web3.eth.Contract(ABI_DAI, fromTokenAddress);
-  console.log(contract);
 
-  // let contract = new web3.eth.Contract(ABI_DAI).at(fromTokenAddress);
-  // contract.estimatedGas
-
-  // contract.balanceOf(walletAddress, (error, balance) => {
-  //   // Get decimals
-  //   contract.decimals((error, decimals) => {
-  //     // calculate a balance
-  //     balance = balance.div(10**decimals);
-  //     console.log(balance.toString());
-  //   });
-  // });
-
-  // let balance = await contract.methods.balanceOf(wallet.address);
-  let balance = await contract.methods.decimals().call();
+  let balance = await contract.methods.balanceOf(wallet.address).call();
 
   console.log(balance);
 
