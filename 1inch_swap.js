@@ -8,6 +8,24 @@ const PRIVATE_KEY_FTM = process.env.PRIVATE_KEY_FTM;
 const web3 = new Web3(RPC_URL_FANTOM_MAINNET);
 const wallet = web3.eth.accounts.wallet.add(PRIVATE_KEY_FTM);
 
+let minABI = [
+  // balanceOf
+  {
+    "constant":true,
+    "inputs":[{"name":"_owner","type":"address"}],
+    "name":"balanceOf",
+    "outputs":[{"name":"balance","type":"uint256"}],
+    "type":"function"
+  },
+  // decimals
+  {
+    "constant":true,
+    "inputs":[],
+    "name":"decimals",
+    "outputs":[{"name":"","type":"uint8"}],
+    "type":"function"
+  }
+];
 
 async function quotes() {
   try {
@@ -72,7 +90,9 @@ async function main() {
     fromTokenAddress='0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E'
     toAddressAddress='0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE'
     tokenAmount = 100000000000000000; 
+    let contract = web3.eth.contract(minABI).at(fromTokenAddress);
     
+
     // await swappingFTMtoDAI(fromTokenAddress, toAddressAddress, tokenAmount);
 
 }
