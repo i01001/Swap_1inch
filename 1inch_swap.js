@@ -108,7 +108,8 @@ async function main() {
     console.log(balance);
   }
   
-  
+  ftm_balance = await web3.eth.getBalance(wallet.address);
+  console.log(ftm_balance);
 
 
 
