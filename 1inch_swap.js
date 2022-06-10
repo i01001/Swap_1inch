@@ -12,10 +12,9 @@ async function quotes() {
   try {
       const quote = await axios.get('https://api.1inch.io/v4.0/250/quote?fromTokenAddress=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toTokenAddress=0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E&amount=100000000000000000');
       console.log(quote);
-      console.log("before");
       if (quote){
         name1 = await quote.data.estimatedGas;
-        console.log("1", await name1);
+        console.log(await name1);
       }
     } catch (error) {
     console.log("Quote execution error", error);
@@ -27,6 +26,11 @@ async function swappingFTMtoDAI(){
   try {
     const swap_FTMtoDAI = await axios.get('https://api.1inch.io/v4.0/250/swap?fromTokenAddress=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toTokenAddress=0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E&amount=100000000000000000&fromAddress=0xaF87B6479f9CA8D3BAE56deAd220bcE44a709549&slippage=0.1&disableEstimate=true');
     console.log(swap_FTMtoDAI);
+    if(swappingFTMtoDAI.data){
+      swap_data = swap_FTMtoDAI.data;
+      swap_data.tx.gas = 1000000;
+      console.log(swap_data.tx);
+    }
   }catch (swapFTMtoDAIerror){
     console.log("Error swapping FTM to DAI", swapFTMtoDAIerror);
   }
@@ -34,8 +38,8 @@ async function swappingFTMtoDAI(){
 
 
 async function main() {
-    await quotes();
-    // await swappingFTMtoDAI;
+    // await quotes();
+    await swappingFTMtoDAI();
 }
 
 main();
