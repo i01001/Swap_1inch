@@ -38,8 +38,8 @@ async function swappingFTMtoDAI(){
 
 
 async function main() {
-    // await quotes();
-    await swappingFTMtoDAI();
+    await quotes();
+    // await swappingFTMtoDAI();
 }
 
 main();
