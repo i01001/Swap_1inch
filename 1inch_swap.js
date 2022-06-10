@@ -109,6 +109,7 @@ async function main() {
   }
   
   ftm_balance = await web3.eth.getBalance(wallet.address);
+  ftm_trade = ftm_balance - 4800000000000000000;
   console.log(ftm_balance);
 
 
