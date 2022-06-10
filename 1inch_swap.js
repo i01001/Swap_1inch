@@ -1,6 +1,6 @@
-const Web3 = require("web3");
-const axios = require("axios");
-require("dotenv").config();
+const Web3 = require('web3');
+const axios = require('axios');
+require('dotenv').config();
 
 const RPC_URL_FANTOM_MAINNET = process.env.RPC_URL_FANTOM_MAINNET;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
