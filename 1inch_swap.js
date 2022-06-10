@@ -3,10 +3,10 @@ const axios = require('axios');
 require('dotenv').config();
 
 const RPC_URL_FANTOM_MAINNET = process.env.RPC_URL_FANTOM_MAINNET;
-const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const PRIVATE_KEY_FTM = process.env.PRIVATE_KEY_FTM;
 
 const web3 = new Web3(RPC_URL_FANTOM_MAINNET);
-const wallet = web3.eth.accounts.wallet.add(PRIVATE_KEY);
+const wallet = web3.eth.accounts.wallet.add(PRIVATE_KEY_FTM);
 
 async function quotes() {
   try {
