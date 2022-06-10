@@ -420,7 +420,7 @@ async function main() {
   toAddressAddress = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
   tokenAmount = 100000000000000000;
   var contract = new web3.eth.Contract(ABI_DAI, fromTokenAddress);
-  console.log(contract);
+  // console.log(contract);
 
   // let contract = new web3.eth.Contract(ABI_DAI).at(fromTokenAddress);
   // contract.estimatedGas
@@ -434,8 +434,8 @@ async function main() {
   //   });
   // });
 
-  // let balance = await (fromTokenAddress).methods.balanceOf(wallet.address);
-  // console.log(balance);
+  let balance = await contract.methods.balanceOf(wallet.address);
+  console.log(balance);
 
   // await swappingFTMtoDAI(fromTokenAddress, toAddressAddress, tokenAmount);
 }
