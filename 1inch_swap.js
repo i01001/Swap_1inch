@@ -6,7 +6,7 @@ const RPC_URL_FANTOM_MAINNET = process.env.RPC_URL_FANTOM_MAINNET;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
 const web3 = new Web3(RPC_URL_FANTOM_MAINNET);
-const wallet = new web3.eth.accounts.wallet.add(PRIVATE_KEY);
+const wallet = web3.eth.accounts.wallet.add(PRIVATE_KEY);
 
 async function quotes() {
   try {
