@@ -112,7 +112,9 @@ async function main() {
   ftm_balance = await web3.eth.getBalance(wallet.address);
   // ftm_trade = ftm_balance - web3.utils.toWei(4.8);
   // ftm_trade = new BigNumber(web3.utils.toWei(4.8));
-    ftm_trade = (BigNumber(ftm_balance).toString()).plus(BigNumber(4800000000000000000).toString());
+    ftm_trade1 = new BigNumber(ftm_balance).toString();
+    ftm_trade2= new BigNumber(4800000000000000000).toString();
+    ftm_trade = ftm_trade1.minus(ftm_trade2);
 
   console.log("FTM Total Balance", web3.utils.fromWei(ftm_balance, "ether") + " FTM");
   console.log("FTM Trade Amount", web3.utils.fromWei(ftm_trade, "ether") + " FTM");
