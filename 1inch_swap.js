@@ -24,7 +24,7 @@ async function quotes() {
 
 async function swappingFTMtoDAI(){
   try {
-    const swap_FTMtoDAI = await axios.get(`https://api.1inch.io/v4.0/250/swap?fromTokenAddress=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toTokenAddress=0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E&amount=100000000000000000&fromAddress=0xaF87B6479f9CA8D3BAE56deAd220bcE44a709549&slippage=0.1&disableEstimate=true`);
+    const swap_FTMtoDAI = await axios.get('https://api.1inch.io/v4.0/250/swap?fromTokenAddress=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toTokenAddress=0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E&amount=100000000000000000&fromAddress=0xaF87B6479f9CA8D3BAE56deAd220bcE44a709549&slippage=0.1&disableEstimate=true');
     // console.log(swap_FTMtoDAI);
     if(swap_FTMtoDAI.data){
       swap_data = swap_FTMtoDAI.data;
