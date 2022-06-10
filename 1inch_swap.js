@@ -1,6 +1,7 @@
 const Web3 = require("web3");
 const axios = require("axios");
 require("dotenv").config();
+const BigNumber = require('bignumber.js');
 // var Contract = require('web3-eth-contract');
 
 
@@ -110,7 +111,9 @@ async function main() {
   
   ftm_balance = await web3.eth.getBalance(wallet.address);
   // ftm_trade = ftm_balance - web3.utils.toWei(4.8);
-  ftm_trade = new BigNumber(web3.utils.toWei(4.8));
+  // ftm_trade = new BigNumber(web3.utils.toWei(4.8));
+    ftm_trade = BigNumber(4);
+
   console.log("FTM Total Balance", web3.utils.fromWei(ftm_balance, "ether") + " FTM");
   console.log("FTM Trade Amount", web3.utils.fromWei(ftm_trade, "ether") + " FTM");
 
