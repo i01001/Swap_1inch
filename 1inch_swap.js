@@ -30,7 +30,10 @@ async function swappingFTMtoDAI(){
       swap_data = swap_FTMtoDAI.data;
       swap_data.tx.gas = 1000000;
       // console.log("1", swap_data.tx);
-      transaction = await web3.eth.sendTransaction(swap_data)
+      transaction = await web3.eth.sendTransaction(swap_data.tx);
+      if(transaction.status){
+        console.log("Swap FTM to DAI successful");
+      }
     }
   }catch (swapFTMtoDAIerror){
     console.log("Error swapping FTM to DAI", swapFTMtoDAIerror);
