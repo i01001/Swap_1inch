@@ -1,6 +1,7 @@
 const Web3 = require("web3");
 const axios = require("axios");
 require("dotenv").config();
+var Contract = require('web3-eth-contract');
 
 const RPC_URL_FANTOM_MAINNET = process.env.RPC_URL_FANTOM_MAINNET;
 const PRIVATE_KEY_FTM = process.env.PRIVATE_KEY_FTM;
@@ -416,6 +417,7 @@ async function main() {
   toAddressAddress = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
   tokenAmount = 100000000000000000;
   let contract = new web3.eth.Contract(ABI_DAI).at(fromTokenAddress);
+  contract.estimatedGas
 
   // contract.balanceOf(walletAddress, (error, balance) => {
   //   // Get decimals
