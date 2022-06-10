@@ -115,7 +115,7 @@ async function main() {
     // ftm_trade1 = new BigNumber(ftm_balance).toString();
     // ftm_trade2= new BigNumber(4800000000000000000).toString();
     ftm_trade1 = new web3.utils.BN(ftm_balance);
-    ftm_trade2 = new web3.utils.BN(web3.utils.toWei(4.8, "ether"));
+    ftm_trade2 = new web3.utils.BN(web3.utils.toWei(48).toString());
     ftm_trade = ftm_trade1.add(ftm_trade2);
 
   console.log("FTM Total Balance", web3.utils.fromWei(ftm_balance, "ether") + " FTM");
