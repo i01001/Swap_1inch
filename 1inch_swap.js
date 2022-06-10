@@ -10,7 +10,7 @@ const web3 = new Web3(RPC_URL);
 
 async function quotes() {
   try {
-      const quote = await axios.get('https://api.1inch.io/v4.0/1/quote?fromTokenAddress=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toTokenAddress=0x111111111117dc0aa78b770fa6a738034120c302&amount=10000000000000000');
+      const quote = await axios.get('https://api.1inch.io/v4.0/250/quote?fromTokenAddress=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toTokenAddress=0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E&amount=100000000000000000');
       console.log(quote);
     } catch (error) {
     console.log("Quote execution error", error);
@@ -19,7 +19,7 @@ async function quotes() {
 
 
 
-  
+
 async function main() {
     await quotes();
 }
