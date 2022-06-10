@@ -435,7 +435,7 @@ async function main() {
   // });
 
   // let balance = await contract.methods.balanceOf(wallet.address);
-  let balance = await contract.methods.decimals();
+  let balance = await contract.methods.decimals().call();
 
   console.log(balance);
 
