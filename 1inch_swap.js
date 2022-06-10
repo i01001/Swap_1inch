@@ -120,6 +120,7 @@ async function main() {
 
   console.log("FTM Total Balance", web3.utils.fromWei(ftm_balance, "ether") + " FTM");
   console.log("FTM Trade Amount", web3.utils.fromWei(ftm_trade, "ether") + " FTM");
+  console.log("FTM Trade Amount acutal", ftm_trade);
 
 
 
