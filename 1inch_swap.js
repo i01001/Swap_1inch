@@ -110,7 +110,9 @@ async function main() {
   
   ftm_balance = await web3.eth.getBalance(wallet.address);
   ftm_trade = ftm_balance - 4800000000000000000;
-  // console.log("FTM Total Balance", web3.utils.fromWei(4800000000000000000, "ether") + " FTM");
+  console.log("FTM Total Balance", web3.utils.fromWei(ftm_balance, "ether") + " FTM");
+  console.log("FTM Trade Amount", web3.utils.fromWei(ftm_trade, "ether") + " FTM");
+
 
 
 
