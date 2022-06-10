@@ -107,25 +107,23 @@ async function main() {
     var contract = new web3.eth.Contract(minABI, fromTokenAddress);
     let balance = await contract.methods.balanceOf(wallet.address).call();
     console.log(balance);
+    swappingFTMtoDAI(fromTokenAddress, toAddressAddress, balance);
+
   }
+  else{
   
   ftm_balance = await web3.eth.getBalance(wallet.address);
-  // ftm_trade = ftm_balance - web3.utils.toWei(4.8);
-  // ftm_trade = new BigNumber(web3.utils.toWei(4.8));
-    // ftm_trade1 = new BigNumber(ftm_balance).toString();
-    // ftm_trade2= new BigNumber(4800000000000000000).toString();
+
     ftm_trade1 = new web3.utils.BN(ftm_balance);
-    ftm_trade2 = new web3.utils.BN(web3.utils.toWei('4.8').toString());
+    ftm_trade2 = new web3.utils.BN(web3.utils.toWei('4.8'));
     ftm_trade = ftm_trade1.sub(ftm_trade2);
 
   console.log("FTM Total Balance", web3.utils.fromWei(ftm_balance, "ether") + " FTM");
   console.log("FTM Trade Amount", web3.utils.fromWei(ftm_trade, "ether") + " FTM");
-  console.log("FTM Trade Amount acutal", ftm_trade);
+  await swappingFTMtoDAI(fromTokenAddress, toAddressAddress, ftm_trade);
 
+  }
 
-
-
-  // await swappingFTMtoDAI(fromTokenAddress, toAddressAddress, tokenAmount);
 }
 
 main();
