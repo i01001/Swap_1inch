@@ -101,13 +101,16 @@ async function main() {
   fromTokenAddress = "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E";
   toAddressAddress = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
   tokenAmount = 100000000000000000;
-  var contract = new web3.eth.Contract(minABI, fromTokenAddress);
 
+  if (_fromTokenAddress != "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE") {
+    var contract = new web3.eth.Contract(minABI, fromTokenAddress);
   let balance = await contract.methods.balanceOf(wallet.address).call();
-
   console.log(balance);
+  }
 
-  // await swappingFTMtoDAI(fromTokenAddress, toAddressAddress, tokenAmount);
+
+
+  await swappingFTMtoDAI(fromTokenAddress, toAddressAddress, tokenAmount);
 }
 
 main();
