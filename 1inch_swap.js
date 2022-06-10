@@ -90,7 +90,7 @@ async function main() {
     fromTokenAddress='0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E'
     toAddressAddress='0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE'
     tokenAmount = 100000000000000000; 
-    let contract = await web3.eth.contract(minABI).at(fromTokenAddress);
+    let contract = new web3.eth.Contract(minABI).at(fromTokenAddress);
 
     contract.balanceOf(walletAddress, (error, balance) => {
       // Get decimals
