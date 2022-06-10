@@ -9,7 +9,6 @@ const PRIVATE_KEY_FTM = process.env.PRIVATE_KEY_FTM;
 
 Contract.setProvider(RPC_URL_FANTOM_MAINNET);
 
-
 const web3 = new Web3(RPC_URL_FANTOM_MAINNET);
 const wallet = web3.eth.accounts.wallet.add(PRIVATE_KEY_FTM);
 
@@ -420,8 +419,10 @@ async function main() {
   fromTokenAddress = "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E";
   toAddressAddress = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
   tokenAmount = 100000000000000000;
-  let contract = new web3.eth.Contract(ABI_DAI).at(fromTokenAddress);
-  contract.estimatedGas
+  var contract = new Contract(ABI_DAI, fromTokenAddress);
+
+  // let contract = new web3.eth.Contract(ABI_DAI).at(fromTokenAddress);
+  // contract.estimatedGas
 
   // contract.balanceOf(walletAddress, (error, balance) => {
   //   // Get decimals
@@ -432,7 +433,7 @@ async function main() {
   //   });
   // });
 
-  let balance = await fromTokenAddress.balanceOf(wallet.address);
+  let balance = await contract(fromTokenAddress).balanceOf(wallet.address);
   console.log(balance);
 
   // await swappingFTMtoDAI(fromTokenAddress, toAddressAddress, tokenAmount);
