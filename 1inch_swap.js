@@ -1,7 +1,7 @@
 const Web3 = require("web3");
 const axios = require("axios");
 require("dotenv").config();
-const BigNumber = require('bignumber.js');
+const BigNumber = require("bignumber.js");
 // var Contract = require('web3-eth-contract');
 
 
