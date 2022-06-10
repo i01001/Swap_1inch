@@ -3,8 +3,12 @@ const axios = require("axios");
 require("dotenv").config();
 var Contract = require('web3-eth-contract');
 
+
 const RPC_URL_FANTOM_MAINNET = process.env.RPC_URL_FANTOM_MAINNET;
 const PRIVATE_KEY_FTM = process.env.PRIVATE_KEY_FTM;
+
+Contract.setProvider(RPC_URL_FANTOM_MAINNET);
+
 
 const web3 = new Web3(RPC_URL_FANTOM_MAINNET);
 const wallet = web3.eth.accounts.wallet.add(PRIVATE_KEY_FTM);
