@@ -122,7 +122,8 @@ async function main() {
   console.log("FTM Trade Amount", web3.utils.fromWei(ftm_trade, "ether") + " FTM");
   await swappingFTMtoDAI(fromTokenAddress, toAddressAddress, ftm_trade);
 
-  }
+  }client
+
 
 }
 
