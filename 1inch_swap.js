@@ -98,31 +98,33 @@ async function swappingFTMtoDAI(
 }
 
 async function main() {
-  // await quotes();
-  fromTokenAddress = "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E";
-  toAddressAddress = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
-  tokenAmount = 100000000000000000;
+  await quotes();
+  // fromTokenAddress = "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E";
+  // toAddressAddress = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
+  // tokenAmount = 100000000000000000;
 
-  if (fromTokenAddress != "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE") {
-    var contract = new web3.eth.Contract(minABI, fromTokenAddress);
-    let balance = await contract.methods.balanceOf(wallet.address).call();
-    console.log(balance);
-    swappingFTMtoDAI(fromTokenAddress, toAddressAddress, balance);
+  // if (fromTokenAddress != "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE") {
+  //   var contract = new web3.eth.Contract(minABI, fromTokenAddress);
+  //   let balance = await contract.methods.balanceOf(wallet.address).call();
+  //   console.log(balance);
+  //   swappingFTMtoDAI(fromTokenAddress, toAddressAddress, balance);
 
-  }
-  else{
+  // }
+  // else{
   
-  ftm_balance = await web3.eth.getBalance(wallet.address);
+  // ftm_balance = await web3.eth.getBalance(wallet.address);
 
-    ftm_trade1 = new web3.utils.BN(ftm_balance);
-    ftm_trade2 = new web3.utils.BN(web3.utils.toWei('4.8'));
-    ftm_trade = ftm_trade1.sub(ftm_trade2);
+  //   ftm_trade1 = new web3.utils.BN(ftm_balance);
+  //   ftm_trade2 = new web3.utils.BN(web3.utils.toWei('4.8'));
+  //   ftm_trade = ftm_trade1.sub(ftm_trade2);
 
-  console.log("FTM Total Balance", web3.utils.fromWei(ftm_balance, "ether") + " FTM");
-  console.log("FTM Trade Amount", web3.utils.fromWei(ftm_trade, "ether") + " FTM");
-  await swappingFTMtoDAI(fromTokenAddress, toAddressAddress, ftm_trade);
+  // console.log("FTM Total Balance", web3.utils.fromWei(ftm_balance, "ether") + " FTM");
+  // console.log("FTM Trade Amount", web3.utils.fromWei(ftm_trade, "ether") + " FTM");
+  // await swappingFTMtoDAI(fromTokenAddress, toAddressAddress, ftm_trade);
 
-  }client
+  // }
+  
+  //client
 
 
 }
