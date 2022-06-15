@@ -56,7 +56,7 @@ async function approval(_tokenAddress, _tokenAmount) {
     // console.log(approve);
     if (approve.data) {
       approve_data = approve.data;
-      console.log(await approve_data.data);
+      console.log(await approve_data.gasPrice);
       approve_data.gas = 1000000;
       approve_data.from = wallet.address;
       transaction = await web3.eth.sendTransaction(approve_data);
