@@ -40,7 +40,7 @@ async function quotes() {
     );
     console.log(quote);
     if (quote) {
-      name1 = await quote.data.estimatedGas;
+      name1 = await quote.data.toTokenAmount;
       console.log(await name1);
     }
   } catch (error) { 
