@@ -84,15 +84,15 @@ async function swappingFTMtoDAI(
     const swap_FTMtoDAI = await axios.get(
       `https://api.1inch.io/v4.0/250/swap?fromTokenAddress=${_fromTokenAddress}&toTokenAddress=${_toTokenAddress}&amount=${_tokenAmount}&fromAddress=${wallet.address}&slippage=0.1&disableEstimate=true`
     );
-    // console.log(swap_FTMtoDAI);
+    console.log(swap_FTMtoDAI);
     if (swap_FTMtoDAI.data) {
       swap_data = swap_FTMtoDAI.data;
       swap_data.tx.gas = 1000000;
       // console.log("1", swap_data.tx);
-      transaction = await web3.eth.sendTransaction(swap_data.tx);
-      if (transaction.status) {
-        console.log("Swap FTM to DAI successful");
-      }
+      // transaction = await web3.eth.sendTransaction(swap_data.tx);
+      // if (transaction.status) {
+      //   console.log("Swap FTM to DAI successful");
+      // }
     }
   } catch (swapFTMtoDAIerror) {
     console.log("Error swapping FTM to DAI", swapFTMtoDAIerror);
@@ -101,7 +101,8 @@ async function swappingFTMtoDAI(
 
 async function main() {
   // await quotes();
-    await approval(0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E, 100000000000000000)
+    // await approval(0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E, 100000000000000000)
+    await swappingFTMtoDAI(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE, 0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E, 100000000000000000)
   // fromTokenAddress = "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E";
   // toAddressAddress = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
   // tokenAmount = 100000000000000000;
