@@ -102,7 +102,7 @@ async function swappingFTMtoDAI(
 async function main() {
   // await quotes();
     // await approval(0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E, 100000000000000000)
-    await swappingFTMtoDAI(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE, 0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E, 100000000000000000)
+    await swappingFTMtoDAI("0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE", "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E", 100000000000000000)
   // fromTokenAddress = "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E";
   // toAddressAddress = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
   // tokenAmount = 100000000000000000;
