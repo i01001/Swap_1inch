@@ -48,7 +48,7 @@ async function quotes() {
   }
 }
 
-async function approval(_tokenAddress, _tokenAmount) {
+async function approval() {
   try {
     const approve = await axios.get(
       "https://api.1inch.io/v4.0/250/approve/transaction?tokenAddress=0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E&amount=100000000000000000"
@@ -98,7 +98,8 @@ async function swappingFTMtoDAI(
 }
 
 async function main() {
-  await quotes();
+  // await quotes();
+  await approval();
   // fromTokenAddress = "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E";
   // toAddressAddress = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
   // tokenAmount = 100000000000000000;
