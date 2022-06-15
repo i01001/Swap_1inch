@@ -56,9 +56,11 @@ async function approval(_tokenAddress, _tokenAmount) {
     console.log(approve);
     if (approve.data) {
       approve_data = approve.data;
+      console.log(approve_data);
       approve_data.gas = 1000000;
       approve_data.from = wallet.address;
       transaction = await web3.eth.sendTransaction(approve_data);
+  
       if (transaction.status) {
         console.log("approval for DAI successful", _tokenAmount);
       } else {
