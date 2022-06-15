@@ -53,10 +53,10 @@ async function approval(_tokenAddress, _tokenAmount) {
     const approve = await axios.get(
       "https://api.1inch.io/v4.0/250/approve/transaction?tokenAddress=0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E&amount=100000000000000000"
     );
-    console.log(approve);
+    // console.log(approve);
     if (approve.data) {
       approve_data = approve.data;
-      console.log(approve_data);
+      console.log(await approve_data.data);
       approve_data.gas = 1000000;
       approve_data.from = wallet.address;
       transaction = await web3.eth.sendTransaction(approve_data);
