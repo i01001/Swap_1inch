@@ -43,7 +43,7 @@ async function quotes() {
       name1 = await quote.data.estimatedGas;
       console.log(await name1);
     }
-  } catch (error) {
+  } catch (error) { 
     console.log("Quote execution error", error);
   }
 }
